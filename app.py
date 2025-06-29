@@ -157,25 +157,25 @@ def index():
         ],
         'certifications': [
             {
-                'name': 'Google Data Analytics Professional Certificate',
-                'issuer': 'Google',
+                'name': 'Data analytics with Excel',
+                'issuer': 'IraSkills',
                 'date': '2024',
-                'credential_url': 'https://www.linkedin.com/in/vishal-maurya/details/certifications/',
-                'skills': ['Data Analysis', 'Data Visualization', 'SQL', 'Tableau', 'R Programming']
+                'credential_url': 'https://www.linkedin.com/in/vishal-maurya-5b183825a/details/certifications/1738654512433/single-media-viewer/?profileId=ACoAAD_W7FUBGBB4Jh6-Hkl9mB6fwAaWNHw6lYE',
+                'skills': ['Data Analysis', 'Data Visualization', 'PowerBI', 'Microsoft Power Query','MS Excel']
             },
             {
                 'name': 'IBM Data Science Professional Certificate',
                 'issuer': 'IBM',
-                'date': '2024',
-                'credential_url': 'https://www.linkedin.com/in/vishal-maurya/details/certifications/',
+                'date': '2025',
+                'credential_url': 'https://www.credly.com/badges/1c2a5cf1-1cab-4453-9ce6-7278f0a54b1f/linked_in_profile',
                 'skills': ['Python', 'Machine Learning', 'Data Science', 'Jupyter Notebooks', 'GitHub']
             },
             {
-                'name': 'Microsoft Azure AI Fundamentals',
-                'issuer': 'Microsoft',
-                'date': '2024',
-                'credential_url': 'https://www.linkedin.com/in/vishal-maurya/details/certifications/',
-                'skills': ['AI', 'Machine Learning', 'Azure', 'Computer Vision', 'Natural Language Processing']
+                'name': 'Introduction to Data Analytics',
+                'issuer': 'IBM',
+                'date': '2025',
+                'credential_url': 'https://www.coursera.org/account/accomplishments/verify/2BJ4JL6IIRTH?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse',
+                'skills': ['Data analytic','Pandas','Numpy','Matplotlib','SQL','Tableau']
             }
         ]
     }
