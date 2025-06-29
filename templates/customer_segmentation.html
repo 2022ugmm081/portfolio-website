@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Demo - Vishal Maurya</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .demo-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 2rem 0;
+        }
+        
+        .results-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('index') }}#projects" class="btn btn-primary back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1><i class="fas fa-users"></i> Customer Segmentation Demo</h1>
+            <p class="lead">Interactive ML Pipeline using K-Means Clustering and Sentiment Analysis</p>
+        </div>
+
+        <div class="demo-card">
+            <h3><i class="fas fa-play-circle"></i> Project Overview</h3>
+            <p>This demo showcases an end-to-end machine learning pipeline that segments customers based on their behavior patterns using K-Means clustering. The system analyzes customer data including age, spending patterns, frequency scores, and recency to identify distinct customer segments.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-cogs"></i> Technologies Used</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-chart-bar"></i> Scikit-learn (K-Means)</li>
+                        <li><i class="fas fa-table"></i> Pandas</li>
+                        <li><i class="fas fa-chart-line"></i> Data Visualization</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="fas fa-bullseye"></i> Key Features</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check"></i> Customer Behavioral Analysis</li>
+                        <li><i class="fas fa-check"></i> K-Means Clustering</li>
+                        <li><i class="fas fa-check"></i> Segment Profiling</li>
+                        <li><i class="fas fa-check"></i> Business Insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h3><i class="fas fa-rocket"></i> Run Demo</h3>
+            <p>Click the button below to run the customer segmentation algorithm on sample data:</p>
+            
+            <button id="runDemo" class="btn btn-primary btn-lg">
+                <i class="fas fa-play"></i> Run Customer Segmentation
+            </button>
+            
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p>Running ML pipeline...</p>
+            </div>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="demo-card">
+                <h3><i class="fas fa-chart-pie"></i> Segmentation Results</h3>
+                <div id="statsGrid" class="stats-grid"></div>
+                
+                <div class="chart-container">
+                    <canvas id="segmentChart"></canvas>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h3><i class="fas fa-table"></i> Segment Analysis</h3>
+                <div id="segmentStats" class="results-container"></div>
+            </div>
+
+            <div class="demo-card">
+                <h3><i class="fas fa-lightbulb"></i> Business Insights</h3>
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-info-circle"></i> Key Insights:</h5>
+                    <ul>
+                        <li><strong>Loyal Customers:</strong> High frequency, consistent spending - Focus on retention programs</li>
+                        <li><strong>High-Value Customers:</strong> High spending, low frequency - Target with premium offerings</li>
+                        <li><strong>At-Risk Customers:</strong> Declining engagement - Implement win-back campaigns</li>
+                        <li><strong>New Customers:</strong> Recent acquisitions - Onboarding and engagement focus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('runDemo').addEventListener('click', function() {
+            const button = this;
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            
+            // Show loading state
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            
+            // Make API call
+            fetch('/api/demo/customer-segmentation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Hide loading
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                
+                // Display stats
+                displayStats(data);
+                
+                // Create charts
+                createSegmentChart(data.segments_count);
+                
+                // Display segment analysis
+                displaySegmentStats(data.segment_stats);
+                
+                // Reset button
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-refresh"></i> Run Again';
+                
+                // Scroll to results
+                results.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loading.style.display = 'none';
+                alert('Error running demo: ' + error.message);
+                
+                // Reset button
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-play"></i> Run Customer Segmentation';
+            });
+        });
+        
+        function displayStats(data) {
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${data.total_customers}</div>
+                    <div class="stat-label">Total Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Customer Segments</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">K-Means</div>
+                    <div class="stat-label">Algorithm Used</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Data Processed</div>
+                </div>
+            `;
+        }
+        
+        function createSegmentChart(segmentCounts) {
+            const ctx = document.getElementById('segmentChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(segmentCounts),
+                    datasets: [{
+                        data: Object.values(segmentCounts),
+                        backgroundColor: [
+                            '#2563eb',
+                            '#10b981', 
+                            '#f59e0b',
+                            '#ef4444'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Customer Segments Distribution'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+        
+        function displaySegmentStats(segmentStats) {
+            const container = document.getElementById('segmentStats');
+            let html = '<h5><i class="fas fa-analytics"></i> Segment Characteristics</h5>';
+            
+            for (const [segment, stats] of Object.entries(segmentStats)) {
+                html += `
+                    <div class="mb-3 p-3 border rounded">
+                        <h6 class="text-primary">${segment}</h6>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <strong>Avg Age:</strong><br>
+                                ${stats.age.toFixed(1)} years
+                            </div>
+                            <div class="col-sm-3">
+                                <strong>Avg Spending:</strong><br>
+                                $${stats.annual_spending.toFixed(0)}
+                            </div>
+                            <div class="col-sm-3">
+                                <strong>Frequency Score:</strong><br>
+                                ${stats.frequency_score.toFixed(1)}
+                            </div>
+                            <div class="col-sm-3">
+                                <strong>Avg Recency:</strong><br>
+                                ${stats.recency_days.toFixed(1)} days
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
