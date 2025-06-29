@@ -29,8 +29,8 @@ def index():
         'title': 'Data Scientist & ML Engineer',
         'email': 'vishal.gusknp2022@gmail.com',
         'phone': '+91-9260991607',
-        'github': 'https://github.com/vishal-maurya',
-        'linkedin': 'https://linkedin.com/in/vishal-maurya',
+        'github': 'https://github.com/2022ugmm081',
+        'linkedin': 'https://www.linkedin.com/in/vishal-maurya-5b183825a/',
         'kaggle': 'https://www.kaggle.com/mauryavishal0',
         'education': {
             'degree': 'Bachelor of Technology (Hons.)',
