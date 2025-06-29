@@ -44,7 +44,8 @@ def index():
                 {'semester': 2, 'sgpa': 7.78, 'cgpa': 7.51},
                 {'semester': 3, 'sgpa': 6.92, 'cgpa': 7.28},
                 {'semester': 4, 'sgpa': 7.08, 'cgpa': 7.21},
-                {'semester': 5, 'sgpa': 7.78, 'cgpa': 7.32}
+                {'semester': 5, 'sgpa': 7.78, 'cgpa': 7.32},
+                {'semester': 6, 'sgpa': 7.14, 'cgpa': 7.29}
             ],
             'school_education': [
                 {
