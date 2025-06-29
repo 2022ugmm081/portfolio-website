@@ -26,7 +26,7 @@ def index():
     # Portfolio data based on Vishal's resume
     portfolio_data = {
         'name': 'Vishal Maurya',
-        'title': 'Data Scientist & ML Engineer',
+        'title': 'Data Science & ML Engineer',
         'email': 'vishal.gusknp2022@gmail.com',
         'phone': '+91-9260991607',
         'github': 'https://github.com/2022ugmm081',
@@ -115,9 +115,9 @@ def index():
         ],
         'skills': {
             'languages': ['Python', 'SQL'],
-            'libraries': ['Pandas', 'Seaborn', 'Matplotlib', 'OpenCV', 'Scikit-learn', 'Tensorflow', 'Plotly'],
+            'libraries': ['Pandas', 'Seaborn', 'Matplotlib', 'OpenCV', 'Scikit-learn', 'Plotly'],
             'tools': ['Google Colab', 'Kaggle', 'Jupyter Notebook', 'VS Code'],
-            'frameworks': ['Dash'],
+            'frameworks': ['Dash','Flask'],
             'databases': ['IBMdb2', 'MySQL'],
             'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query']
         },
