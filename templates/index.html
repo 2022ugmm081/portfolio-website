@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - Data Scientist & ML Engineer</title>
+    <meta name="description" content="Portfolio of {{ data.name }}, Data Scientist and Machine Learning Engineer specializing in customer segmentation, sentiment analysis, and predictive modeling.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">{{ data.name }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">{{ data.name }}</h1>
+                        <h2 class="hero-subtitle">{{ data.title }}</h2>
+                        <p class="hero-description">
+                            Passionate about transforming data into actionable insights. Specialized in machine learning pipelines, 
+                            customer segmentation, and sentiment analysis with proven track record in competitive data science.
+                        </p>
+                        <div class="hero-metrics">
+                            <div class="metric">
+                                <div class="metric-value">{{ data.education.cgpa }}</div>
+                                <div class="metric-label">Current CGPA</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">474/1394</div>
+                                <div class="metric-label">Hackathon Rank</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">889+</div>
+                                <div class="metric-label">Physics Questions Solved</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">87.8%</div>
+                                <div class="metric-label">CBSE XII Score</div>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">View Projects</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://pixabay.com/get/gbb764bdce249af8bf5dd2f16f3504d5e38ad7add3ceea09331908b2ccad7de9b1e05b124e38cc086be09bdce8a28544fc896e8563b3e12f05e400713098230cd_1280.jpg" 
+                             alt="Professional Data Scientist" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Data-driven professional with expertise in machine learning and analytics</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <p class="lead">
+                            I'm a passionate data scientist and machine learning engineer currently pursuing my Bachelor's 
+                            degree at NIT Jamshedpur. With hands-on experience in end-to-end ML pipelines, I specialize 
+                            in customer segmentation, sentiment analysis, and predictive modeling.
+                        </p>
+                        <p>
+                            My expertise spans from data preprocessing and feature engineering to model deployment and 
+                            business stakeholder presentation. I have successfully ranked in competitive hackathons and 
+                            gained practical experience through internships in data analytics and machine learning.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h5>{{ data.education.degree }}</h5>
+                                    <p>{{ data.education.field }}<br>{{ data.education.institution }}<br>
+                                    <small class="text-muted">Reg ID: {{ data.education.reg_id }} | Current CGPA: {{ data.education.cgpa }}</small></p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <h5>Academic Excellence</h5>
+                                    <p>State Scholarship Winner | FFE Scholar<br>
+                                    <small class="text-muted">CBSE XII: 87.8% | CBSE X: 93.2%</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skills-overview">
+                        <h4 class="mb-4">Core Competencies</h4>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Machine Learning</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Data Analysis</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Python Programming</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Data Visualization</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">End-to-end machine learning solutions with real-world impact</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for project in data.projects %}
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ project.image }}" alt="{{ project.title }}" class="img-fluid">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="{{ project.github_url if project.github_url else '#' }}" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-github"></i> Code</a>
+                                    <a href="{{ project.demo_url }}" class="btn btn-outline-light btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                    {% if project.kaggle_dataset %}
+                                    <a href="{{ project.kaggle_dataset }}" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-kaggle"></i> Dataset</a>
+                                    {% endif %}
+                                    {% if project.kaggle_competition %}
+                                    <a href="{{ project.kaggle_competition }}" target="_blank" class="btn btn-outline-light btn-sm"><i class="fab fa-kaggle"></i> Competition</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">{{ project.title }}</h4>
+                            <p class="project-description">{{ project.description }}</p>
+                            <div class="project-highlights">
+                                {% for highlight in project.highlights %}
+                                <span class="highlight-badge">{{ highlight }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="project-tech">
+                                {% for tech in project.technologies[:6] %}
+                                <span class="tech-badge">{{ tech }}</span>
+                                {% endfor %}
+                                {% if project.technologies|length > 6 %}
+                                <span class="tech-badge">+{{ project.technologies|length - 6 }} more</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <p class="section-subtitle">Building expertise through hands-on learning and real-world applications</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="timeline">
+                        {% for exp in data.experience %}
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4 class="timeline-title">{{ exp.title }}</h4>
+                                    <h5 class="timeline-company">{{ exp.company }}</h5>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-period">{{ exp.period }}</span>
+                                        <span class="timeline-location">{{ exp.location }}</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-body">
+                                    <ul class="achievements-list">
+                                        {% for achievement in exp.achievements %}
+                                        <li>{{ achievement }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">Comprehensive toolkit for data science and machine learning</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-code"></i>
+                            <h4>Programming Languages</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.languages %}
+                            <span class="skill-badge skill-primary">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-brain"></i>
+                            <h4>ML Libraries</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.libraries %}
+                            <span class="skill-badge skill-secondary">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-tools"></i>
+                            <h4>Development Tools</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.tools %}
+                            <span class="skill-badge skill-success">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Frameworks</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.frameworks %}
+                            <span class="skill-badge skill-warning">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-database"></i>
+                            <h4>Databases</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.databases %}
+                            <span class="skill-badge skill-info">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Analytics Tools</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.analytics_tools %}
+                            <span class="skill-badge skill-danger">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Academic Achievements</h2>
+                    <p class="section-subtitle">Recognition for academic excellence and scholarly accomplishments</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for achievement in data.achievements %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="{{ achievement.icon }}"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4 class="achievement-title">{{ achievement.title }}</h4>
+                            <p class="achievement-description">{{ achievement.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Detailed Education Timeline -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="education-details">
+                        <h3 class="text-center mb-4"><i class="fas fa-graduation-cap"></i> Educational Journey</h3>
+                        
+                        <!-- Current Education -->
+                        <div class="education-item current-education">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h4>{{ data.education.degree }}</h4>
+                                    <h5>{{ data.education.field }}</h5>
+                                    <p>{{ data.education.institution }} | {{ data.education.period }}</p>
+                                    <p><strong>Registration ID:</strong> {{ data.education.reg_id }}</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="cgpa-display">
+                                        <div class="cgpa-value">{{ data.education.cgpa }}</div>
+                                        <div class="cgpa-label">Current CGPA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Semester-wise Performance -->
+                            <div class="semester-progress mt-3">
+                                <h6>Semester-wise Performance:</h6>
+                                <div class="row">
+                                    {% for sem in data.education.semester_wise %}
+                                    <div class="col-6 col-md-2 mb-2">
+                                        <div class="semester-card">
+                                            <div class="sem-number">Sem {{ sem.semester }}</div>
+                                            <div class="sem-sgpa">{{ sem.sgpa }}</div>
+                                            <div class="sem-cgpa">CGPA: {{ sem.cgpa }}</div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- School Education -->
+                        <div class="school-education mt-4">
+                            <h5><i class="fas fa-school"></i> School Education</h5>
+                            <div class="row">
+                                {% for school in data.education.school_education %}
+                                <div class="col-md-6 mb-3">
+                                    <div class="school-card">
+                                        <h6>{{ school.level }}</h6>
+                                        <p><strong>{{ school.institution }}</strong></p>
+                                        <p>{{ school.board }} | {{ school.year }}</p>
+                                        <div class="school-percentage">{{ school.percentage }}</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Certifications</h2>
+                    <p class="section-subtitle">Professional credentials and continuous learning achievements</p>
+                </div>
+            </div>
+            <div class="row">
+                {% for cert in data.certifications %}
+                <div class="col-lg-4 mb-4">
+                    <div class="certification-card">
+                        <div class="cert-header">
+                            <i class="fas fa-certificate cert-icon"></i>
+                            <h4 class="cert-title">{{ cert.name }}</h4>
+                            <h5 class="cert-issuer">{{ cert.issuer }}</h5>
+                            <span class="cert-date">{{ cert.date }}</span>
+                        </div>
+                        <div class="cert-body">
+                            <div class="cert-skills">
+                                <h6><i class="fas fa-tools"></i> Skills Covered:</h6>
+                                <div class="skills-tags">
+                                    {% for skill in cert.skills %}
+                                    <span class="skill-tag">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="cert-action">
+                                <a href="{{ cert.credential_url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-linkedin"></i> View on LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's discuss opportunities in data science and machine learning</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Flash Messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <div class="contact-form">
+                        <form action="{{ url_for('contact') }}" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="contact-info">
+                        <div class="row text-center">
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <h5>Email</h5>
+                                    <p><a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <div class="contact-item">
+                                    <i class="fab fa-github"></i>
+                                    <h5>GitHub</h5>
+                                    <p><a href="{{ data.github }}" target="_blank">View Profile</a></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <div class="contact-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <h5>LinkedIn</h5>
+                                    <p><a href="{{ data.linkedin }}" target="_blank">Connect</a></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <div class="contact-item">
+                                    <i class="fab fa-kaggle"></i>
+                                    <h5>Kaggle</h5>
+                                    <p><a href="{{ data.kaggle }}" target="_blank">View Competitions</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer-content">
+                        <p>&copy; 2025 {{ data.name }}. All rights reserved.</p>
+                        <div class="social-links">
+                            <a href="{{ data.github }}" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="{{ data.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:{{ data.email }}"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
