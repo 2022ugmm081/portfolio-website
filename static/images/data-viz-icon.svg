@@ -1,0 +1,41 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="rgba(37, 99, 235, 0.1)" stroke="url(#dataGrad)" stroke-width="2"/>
+  
+  <!-- Bar chart -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="10" width="8" height="20" fill="url(#dataGrad)" rx="2"/>
+    <rect x="12" y="5" width="8" height="25" fill="url(#dataGrad)" rx="2"/>
+    <rect x="24" y="0" width="8" height="30" fill="url(#dataGrad)" rx="2"/>
+    <rect x="36" y="8" width="8" height="22" fill="url(#dataGrad)" rx="2"/>
+    <rect x="48" y="12" width="8" height="18" fill="url(#dataGrad)" rx="2"/>
+  </g>
+  
+  <!-- Line chart -->
+  <g transform="translate(25, 25)">
+    <polyline points="0,30 10,25 20,20 30,15 40,10 50,5" 
+              fill="none" stroke="url(#dataGrad)" stroke-width="2"/>
+    <circle cx="0" cy="30" r="2" fill="#2563eb"/>
+    <circle cx="10" cy="25" r="2" fill="#2563eb"/>
+    <circle cx="20" cy="20" r="2" fill="#10b981"/>
+    <circle cx="30" cy="15" r="2" fill="#10b981"/>
+    <circle cx="40" cy="10" r="2" fill="#10b981"/>
+    <circle cx="50" cy="5" r="2" fill="#10b981"/>
+  </g>
+  
+  <!-- Data points scatter -->
+  <g opacity="0.7">
+    <circle cx="75" cy="70" r="1.5" fill="#2563eb"/>
+    <circle cx="80" cy="65" r="1.5" fill="#10b981"/>
+    <circle cx="85" cy="75" r="1.5" fill="#2563eb"/>
+    <circle cx="78" cy="80" r="1.5" fill="#10b981"/>
+    <circle cx="82" cy="68" r="1.5" fill="#2563eb"/>
+  </g>
+</svg>
