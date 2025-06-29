@@ -1,0 +1,84 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.1" />
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#grad1)"/>
+  
+  <!-- Grid pattern -->
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  
+  <!-- Data visualization elements -->
+  <g opacity="0.3">
+    <!-- Bar chart representation -->
+    <rect x="100" y="600" width="30" height="100" fill="rgba(37, 99, 235, 0.3)" rx="4"/>
+    <rect x="140" y="550" width="30" height="150" fill="rgba(37, 99, 235, 0.4)" rx="4"/>
+    <rect x="180" y="580" width="30" height="120" fill="rgba(37, 99, 235, 0.3)" rx="4"/>
+    <rect x="220" y="520" width="30" height="180" fill="rgba(16, 185, 129, 0.4)" rx="4"/>
+    <rect x="260" y="570" width="30" height="130" fill="rgba(16, 185, 129, 0.3)" rx="4"/>
+    
+    <!-- Line chart representation -->
+    <polyline points="800,200 850,180 900,160 950,140 1000,120 1050,100" 
+              fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-width="3"/>
+    <polyline points="800,250 850,230 900,210 950,190 1000,170 1050,150" 
+              fill="none" stroke="rgba(37, 99, 235, 0.4)" stroke-width="3"/>
+    
+    <!-- Data points -->
+    <circle cx="800" cy="200" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    <circle cx="850" cy="180" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    <circle cx="900" cy="160" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    <circle cx="950" cy="140" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    <circle cx="1000" cy="120" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    <circle cx="1050" cy="100" r="5" fill="rgba(16, 185, 129, 0.6)"/>
+    
+    <!-- Neural network nodes -->
+    <g transform="translate(400, 300)">
+      <circle cx="0" cy="0" r="8" fill="rgba(37, 99, 235, 0.4)"/>
+      <circle cx="0" cy="50" r="8" fill="rgba(37, 99, 235, 0.4)"/>
+      <circle cx="0" cy="100" r="8" fill="rgba(37, 99, 235, 0.4)"/>
+      
+      <circle cx="100" cy="25" r="8" fill="rgba(16, 185, 129, 0.4)"/>
+      <circle cx="100" cy="75" r="8" fill="rgba(16, 185, 129, 0.4)"/>
+      
+      <circle cx="200" cy="50" r="8" fill="rgba(245, 158, 11, 0.4)"/>
+      
+      <!-- Connections -->
+      <line x1="8" y1="0" x2="92" y2="25" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="0" x2="92" y2="75" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="50" x2="92" y2="25" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="50" x2="92" y2="75" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="100" x2="92" y2="25" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="8" y1="100" x2="92" y2="75" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      
+      <line x1="108" y1="25" x2="192" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <line x1="108" y1="75" x2="192" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Floating geometric shapes -->
+  <g opacity="0.2">
+    <rect x="950" y="300" width="40" height="40" fill="rgba(37, 99, 235, 0.3)" rx="8" transform="rotate(45 970 320)"/>
+    <circle cx="150" cy="150" r="25" fill="rgba(16, 185, 129, 0.3)"/>
+    <polygon points="1100,500 1120,460 1140,500 1120,540" fill="rgba(245, 158, 11, 0.3)"/>
+    <rect x="200" y="400" width="30" height="30" fill="rgba(37, 99, 235, 0.3)" rx="6"/>
+  </g>
+  
+  <!-- Code-like elements -->
+  <g opacity="0.15" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.4)">
+    <text x="50" y="100">import pandas as pd</text>
+    <text x="50" y="120">from sklearn.model_selection import train_test_split</text>
+    <text x="50" y="140">model = LogisticRegression()</text>
+    <text x="50" y="160">accuracy = model.score(X_test, y_test)</text>
+    
+    <text x="700" y="400">def analyze_data(df):</text>
+    <text x="720" y="420">    return df.groupby('category').mean()</text>
+    <text x="700" y="440">result = analyze_data(dataset)</text>
+  </g>
+</svg>
