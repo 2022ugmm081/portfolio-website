@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDVI Land Cover Classification Demo - Vishal Maurya</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: var(--gradient-secondary);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        
+        .demo-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 2rem 0;
+        }
+        
+        .results-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+            margin: 2rem 0;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .accuracy-badge {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        
+        .feature-importance {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('index') }}#projects" class="btn btn-secondary back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1><i class="fas fa-satellite"></i> NDVI Land Cover Classification Demo</h1>
+            <p class="lead">Satellite Data Analysis using Logistic Regression - IIT Guwahati Hackathon 2025</p>
+            <div class="accuracy-badge">
+                <i class="fas fa-trophy"></i> 79.09% Accuracy | Rank 474/1394
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h3><i class="fas fa-satellite-dish"></i> Project Overview</h3>
+            <p>This demo showcases the NDVI-based land cover classification model that achieved 79.09% accuracy in the Summer Analytics Hackathon 2025 at IIT Guwahati. The model uses satellite NDVI (Normalized Difference Vegetation Index) time series data to classify different land cover types including forests, farmland, grassland, urban areas, and water bodies.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-cogs"></i> Technologies Used</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fas fa-brain"></i> Scikit-learn (Logistic Regression)</li>
+                        <li><i class="fas fa-chart-line"></i> NDVI Time Series Analysis</li>
+                        <li><i class="fas fa-calculator"></i> Statistical Feature Engineering</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="fas fa-bullseye"></i> Key Features</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check"></i> Satellite Data Processing</li>
+                        <li><i class="fas fa-check"></i> Advanced Feature Engineering</li>
+                        <li><i class="fas fa-check"></i> Multi-class Classification</li>
+                        <li><i class="fas fa-check"></i> Competitive Performance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alert alert-success mt-3">
+                <h6><i class="fas fa-info-circle"></i> About NDVI:</h6>
+                <p class="mb-0">The Normalized Difference Vegetation Index (NDVI) is a satellite-derived metric that measures vegetation health and density. Values range from -1 to 1, where higher values indicate healthier, denser vegetation.</p>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h3><i class="fas fa-rocket"></i> Run Classification Demo</h3>
+            <p>Click the button below to run the NDVI land cover classification on synthetic satellite data:</p>
+            
+            <button id="runDemo" class="btn btn-secondary btn-lg">
+                <i class="fas fa-play"></i> Run Land Cover Classification
+            </button>
+            
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p>Processing satellite data...</p>
+            </div>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="demo-card">
+                <h3><i class="fas fa-chart-bar"></i> Classification Results</h3>
+                <div id="statsGrid" class="stats-grid"></div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <canvas id="featureChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h3><i class="fas fa-microscope"></i> Model Performance</h3>
+                <div id="modelPerformance" class="results-container"></div>
+            </div>
+
+            <div class="demo-card">
+                <h3><i class="fas fa-lightbulb"></i> Land Cover Insights</h3>
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-leaf"></i> Classification Categories:</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><strong>Forest:</strong> High NDVI (0.7-0.9) - Dense vegetation</li>
+                                <li><strong>Farmland:</strong> Seasonal NDVI (0.4-0.8) - Crop cycles</li>
+                                <li><strong>Grassland:</strong> Medium NDVI (0.3-0.6) - Moderate vegetation</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li><strong>Urban:</strong> Low NDVI (0.1-0.3) - Built environment</li>
+                                <li><strong>Water:</strong> Very low NDVI (≤0.1) - Water bodies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('runDemo').addEventListener('click', function() {
+            const button = this;
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            
+            // Show loading state
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            loading.style.display = 'block';
+            results.style.display = 'none';
+            
+            // Make API call
+            fetch('/api/demo/land-cover-classification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Hide loading
+                loading.style.display = 'none';
+                results.style.display = 'block';
+                
+                // Display stats
+                displayStats(data);
+                
+                // Create charts
+                createDistributionChart(data.land_cover_distribution);
+                createFeatureChart(data.feature_importance);
+                
+                // Display model performance
+                displayModelPerformance(data);
+                
+                // Reset button
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-refresh"></i> Run Again';
+                
+                // Scroll to results
+                results.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                loading.style.display = 'none';
+                alert('Error running demo: ' + error.message);
+                
+                // Reset button
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-play"></i> Run Land Cover Classification';
+            });
+        });
+        
+        function displayStats(data) {
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${data.accuracy}%</div>
+                    <div class="stat-label">Model Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${data.total_samples}</div>
+                    <div class="stat-label">Total Samples</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${data.train_samples}</div>
+                    <div class="stat-label">Training Samples</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${data.test_samples}</div>
+                    <div class="stat-label">Test Samples</div>
+                </div>
+            `;
+        }
+        
+        function createDistributionChart(distribution) {
+            const ctx = document.getElementById('distributionChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(distribution),
+                    datasets: [{
+                        label: 'Sample Count',
+                        data: Object.values(distribution),
+                        backgroundColor: [
+                            '#10b981',
+                            '#f59e0b', 
+                            '#84cc16',
+                            '#6b7280',
+                            '#3b82f6'
+                        ],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Land Cover Distribution'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        
+        function createFeatureChart(featureImportance) {
+            const ctx = document.getElementById('featureChart').getContext('2d');
+            
+            const features = Object.keys(featureImportance);
+            const importance = Object.values(featureImportance);
+            
+            new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: features.map(f => f.replace('_', ' ').toUpperCase()),
+                    datasets: [{
+                        label: 'Feature Importance',
+                        data: importance,
+                        backgroundColor: '#10b981',
+                        borderColor: '#059669',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Feature Importance'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        
+        function displayModelPerformance(data) {
+            const container = document.getElementById('modelPerformance');
+            
+            let predictionHtml = '<div class="row"><div class="col-md-6"><h6>Sample Predictions:</h6><table class="table table-sm">';
+            predictionHtml += '<thead><tr><th>Actual</th><th>Predicted</th><th>Match</th></tr></thead><tbody>';
+            
+            for (let i = 0; i < data.sample_predictions.actual.length; i++) {
+                const actual = data.sample_predictions.actual[i];
+                const predicted = data.sample_predictions.predicted[i];
+                const match = actual === predicted;
+                
+                predictionHtml += `
+                    <tr class="${match ? 'table-success' : 'table-danger'}">
+                        <td>${actual}</td>
+                        <td>${predicted}</td>
+                        <td>${match ? '✓' : '✗'}</td>
+                    </tr>
+                `;
+            }
+            
+            predictionHtml += '</tbody></table></div>';
+            
+            // Add feature importance section
+            predictionHtml += '<div class="col-md-6"><h6>Top Features:</h6>';
+            const sortedFeatures = Object.entries(data.feature_importance)
+                .sort(([,a], [,b]) => b - a)
+                .slice(0, 5);
+            
+            predictionHtml += '<ul class="list-group list-group-flush">';
+            sortedFeatures.forEach(([feature, importance]) => {
+                predictionHtml += `
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>${feature.replace('_', ' ').toUpperCase()}</span>
+                        <span class="badge bg-secondary">${importance.toFixed(3)}</span>
+                    </li>
+                `;
+            });
+            predictionHtml += '</ul></div></div>';
+            
+            container.innerHTML = predictionHtml;
+        }
+    </script>
+</body>
+</html>
