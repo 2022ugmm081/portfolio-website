@@ -37,7 +37,7 @@ def index():
             'field': 'Metallurgical and Materials Science Engineering',
             'institution': 'National Institute of Technology, Jamshedpur',
             'period': '2022-26',
-            'cgpa': '7.32',
+            'cgpa': '7.29',
             'reg_id': '2022UGMM081',
             'semester_wise': [
                 {'semester': 1, 'sgpa': 7.25, 'cgpa': 7.25},
@@ -66,7 +66,7 @@ def index():
         },
         'projects': [
             {
-                'title': 'Customer Segmentation + Sentiment Analysis Dashboard',
+                'title': 'Customer Segmentation  Analysis Dashboard',
                 'description': 'Built an end-to-end ML pipeline using KMeans and logistic regression on a Kaggle dataset, with an interactive Plotly Dash dashboard. Applied NLP techniques and trained models for sentiment prediction and behavioral segmentation.',
                 'technologies': ['Python', 'pandas', 'scikit-learn', 'NLTK', 'TF-IDF', 'KMeans', 'Logistic Regression', 'Seaborn', 'Plotly', 'Dash'],
                 'highlights': ['End-to-end ML pipeline', 'Interactive dashboard', 'Business stakeholder presentation'],
@@ -82,8 +82,8 @@ def index():
                 'highlights': ['79.09% accuracy', 'Ranked 474/1394', 'Advanced feature engineering', 'Satellite data analysis'],
                 'image': 'https://pixabay.com/get/gf74fcb45f5ab4b95e6e74e48063559ee19ce5cd7c801639db20adacaf496cc2ab052edebff442d0643f8c1ff6c20a5811e767a121469a8a3ecaf78d362f03227_1280.jpg',
                 'demo_url': '/demo/land-cover-classification',
-                'github_url': 'https://github.com/vishal-maurya/ndvi-land-cover-classification',
-                'kaggle_competition': 'https://www.kaggle.com/competitions/iit-guwahati-summer-analytics-2025'
+                'github_url': 'https://github.com/2022ugmm081/ndvi-land-cover-classification-summer-analytics-2025',
+                'kaggle_competition': 'https://www.kaggle.com/competitions/summer-analytics-mid-hackathon'
             }
         ],
         'experience': [
