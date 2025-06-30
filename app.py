@@ -130,12 +130,12 @@ def index():
                 'icon': 'fas fa-trophy'
             },
             {
-                'title': 'Batch Topper 2019',
+                'title': 'Class Topper 2019',
                 'description': 'Topper of class 2019 (CBSE Board) of Jawahar Navodaya Vidyalaya, Barabanki',
                 'icon': 'fas fa-medal'
             },
             {
-                'title': 'School Rank 2nd',
+                'title': 'Class Rank 2nd',
                 'description': 'Secured 2nd rank in class CBSE 12th Board examination',
                 'icon': 'fas fa-award'
             },
