@@ -217,7 +217,7 @@ function initTypingEffect() {
     
     const originalText = heroSubtitle.textContent;
     const typingTexts = [
-        'Data Scientist & ML Engineer',
+        'Data Science & ML Engineer',
         'Machine Learning Specialist',
         'Analytics Expert',
         'Python Developer'
