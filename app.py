@@ -26,12 +26,14 @@ def index():
     # Portfolio data based on Vishal's resume
     portfolio_data = {
         'name': 'Vishal Maurya',
-        'title': 'Data Science & ML Engineer',
+        'title': 'Metallurgical Engineer',
         'email': 'vishal.gusknp2022@gmail.com',
         'phone': '+91-9260991607',
         'github': 'https://github.com/2022ugmm081',
         'linkedin': 'https://www.linkedin.com/in/vishal-maurya-5b183825a/',
         'kaggle': 'https://www.kaggle.com/mauryavishal0',
+        'hackerrank':'https://www.hackerrank.com/profile/vishal_gusknp201',
+        'leetcode':"https://leetcode.com/u/vishal_gus/",
         'education': {
             'degree': 'Bachelor of Technology (Hons.)',
             'field': 'Metallurgical and Materials Science Engineering',
@@ -66,9 +68,19 @@ def index():
         },
         'projects': [
             {
-                'title': 'Customer Segmentation  Analysis Dashboard',
+                'title': 'Dynamic Pricing for Urban Parking Lots',
+                'description': 'Capstone Project of Summer Analytics 2025 hosted by Consulting & Analytics Club X Pathway. The implementation uses Pathway, a Python library for streaming data processing, to handle real-time data, and Bokeh and Panel for visualization.',
+                'technologies': ['Python', 'pandas', '.pathway', 'bokeh', 'panel', 'numpy'],
+                'highlights': ['Live Data process', 'Data Pipeline', 'Data streaming', 'Revenue increses by 15%'],
+                'image': 'https://pbs.twimg.com/media/GvZG3qGaYAcRHE9?format=jpg&name=small',
+                'demo_url': '/demo/dynamic_pricing',
+                'github_url': 'https://github.com/2022ugmm081/Dynamic-Parking-Pricing',
+                'kaggle_competition': 'https://www.kaggle.com/competitions/summer-analytics-mid-hackathon'
+            },
+            {
+                'title': 'Customer Segmentation Analysis Dashboard',
                 'description': 'Built an end-to-end ML pipeline using KMeans and logistic regression on a Kaggle dataset, with an interactive Plotly Dash dashboard. Applied NLP techniques and trained models for sentiment prediction and behavioral segmentation.',
-                'technologies': ['Python', 'pandas', 'scikit-learn', 'NLTK', 'TF-IDF', 'KMeans', 'Logistic Regression', 'Seaborn', 'Plotly', 'Dash'],
+                'technologies': ['Python', 'pandas', 'scikit-learn','KMeans', 'Logistic Regression', 'Seaborn', 'Dash'],
                 'highlights': ['End-to-end ML pipeline', 'Interactive dashboard', 'Business stakeholder presentation'],
                 'image': 'https://pixabay.com/get/g36208a1b77913678b03a464f36cd96f5c06b18f05f8191572d32a013c4408124a480de5b92a760d6428d9f066a0273918dfa9a993f172a5b2dd8590f6640e6fb_1280.jpg',
                 'demo_url': '/demo/customer-segmentation',
@@ -76,15 +88,18 @@ def index():
                 'kaggle_dataset': 'https://www.kaggle.com/mauryavishal0/datasets'
             },
             {
-                'title': 'NDVI-Based Land Cover Classification',
-                'description': 'Summer Analytics Hackathon 2025 - IIT Guwahati. Built a logistic regression model to classify land cover types from satellite NDVI time series data. Achieved 79.09% accuracy and ranked 474/1394 on public leaderboard.',
-                'technologies': ['Python', 'pandas', 'scikit-learn', 'Logistic Regression', 'matplotlib', 'seaborn'],
-                'highlights': ['79.09% accuracy', 'Ranked 474/1394', 'Advanced feature engineering', 'Satellite data analysis'],
-                'image': 'https://pixabay.com/get/gf74fcb45f5ab4b95e6e74e48063559ee19ce5cd7c801639db20adacaf496cc2ab052edebff442d0643f8c1ff6c20a5811e767a121469a8a3ecaf78d362f03227_1280.jpg',
-                'demo_url': '/demo/land-cover-classification',
-                'github_url': 'https://github.com/2022ugmm081/ndvi-land-cover-classification-summer-analytics-2025',
-                'kaggle_competition': 'https://www.kaggle.com/competitions/summer-analytics-mid-hackathon'
+                'title': 'Heart Disease Prediction Using Machine Learning',
+                'description': 'Developed classification models using Logistic Regression and Random Forest on the UCI Cleveland Heart Disease dataset from Kaggle. Included thorough preprocessing, EDA, model training, and evaluation using confusion matrices.',
+                'technologies': ['Python', 'pandas', 'scikit-learn', 'Logistic Regression', 'Random Forest', 'Seaborn', 'Matplotlib', 'Jupyter Notebook'],
+                'highlights': ['79% accuracy with Logistic Regression', 'Clinical feature analysis', 'Confusion matrix evaluation'],
+                'image': 'https://pixabay.com/get/g84e1b4ce009ae7a5b1666603dd1814d9f28ce496f406a49884ac210e0a70e59cf1167b6793ae79eeaa0a406a7b087fb7c828f6bbdbd0f666d013517d3cc0b276_1280.jpg',
+                'demo_url': '/demo/heart-disease-prediction',
+                'github_url': 'https://github.com/2022ugmm081/heart-disease-prediction',
+                'kaggle_dataset': 'https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data'
+                
             }
+
+            
         ],
         'experience': [
             {
@@ -111,18 +126,41 @@ def index():
                     'Built interactive Power BI dashboards for sales trends visualization',
                     'Presented actionable insights through structured PowerPoint presentations'
                 ]
+            },
+            {
+                'title': 'Vocational Training',
+                'company': 'Tata Steel Ltd.',
+                'period': 'May 2025 – July 2025 (6 weeks)',
+                'location': 'On-site',
+                'achievements': [
+                    'It has endowed me with a profound understanding of the LD steelmaking process, contemporary technologies, and the specialized practices utilized within the steel industry.',
+                    'Learned Slag Monitoring and Detection Systems',
+                    'Advanced Automation with OptiBOF',
+                    'LD-AC Process for High-Phosphorus Hot Metal:'
+                ]
+            },
+            {
+                'title': 'Subject Matter Expert',
+                'company': 'CHEGG INDIA Pvt Ltd',
+                'period': 'May 2023 – Nov 2024 (1 yr 7 months)',
+                'location': 'Freelance',
+                'achievements': [
+                    'I am a Subject Matter Expert at CHEGG INDIA Pvt Ltd, specializing in Physics problem solving',
+                    'My role involves providing clear, accurate solutions to complex phycics problems, helping students understand difficult concepts',
+                ]
             }
         ],
         'skills': {
-            'languages': ['Python', 'SQL'],
-            'libraries': ['Pandas', 'Seaborn', 'Matplotlib', 'OpenCV', 'Scikit-learn', 'Plotly'],
+            'languages': ['Python', 'SQL','SAS','R'],
+            'libraries': ['Pandas', 'Seaborn','Numpy', 'Matplotlib', 'OpenCV', 'Scikit-learn'],
             'tools': ['Google Colab', 'Kaggle', 'Jupyter Notebook', 'VS Code'],
-            'frameworks': ['Dash','Flask'],
-            'databases': ['IBMdb2', 'MySQL'],
-            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query']
+            'frameworks': ['Dash','Flask','Pathway'],
+            'databases': [ 'MySQL'],
+            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query','Alteryx'],
+            'metallurgical_tools':['Factsage Education','ImageJ']
         },
         'interests': ['Data Analysis', 'Machine Learning'],
-        'soft_skills': ['Problem Solving', 'Self-learning', 'Presentation', 'Adaptability'],
+        'soft_skills': ['Self-learning', 'Presentation', 'Adaptability'],
         'achievements': [
             {
                 'title': 'State Level Scholarship Winner',
@@ -130,19 +168,19 @@ def index():
                 'icon': 'fas fa-trophy'
             },
             {
-                'title': 'Class Topper 2019',
-                'description': 'Topper of class 2019 (CBSE Board) of Jawahar Navodaya Vidyalaya, Barabanki',
-                'icon': 'fas fa-medal'
-            },
-            {
-                'title': 'Class Rank 2nd',
-                'description': 'Secured 2nd rank in class CBSE 12th Board examination',
-                'icon': 'fas fa-award'
-            },
-            {
                 'title': 'FFE Scholar',
                 'description': 'Foundation for Excellence Scholar with Core Employability Skills training from Wadhwani Foundation',
                 'icon': 'fas fa-graduation-cap'
+            },
+            {
+                'title': 'NDVI-Based Land Cover Classification (Summer Analytics 2025 Hackathon)',
+                'description': 'Achieved 79.09% accuracy and ranked 474 out of 1395 participants by handling noisy data, missing values, and seasonal variation on Kaggle',
+                'icon': 'fas fa-rocket-cap'
+            },
+            {
+                'title': 'Nutrition Health Survey- Age Prediction Summer Analytics 2025, IIT Guwahati',
+                'description': 'Ranked 189 out of 7.1K participants by handling missing values, using Dicision Tree Classification',
+                'icon': 'fas fa-rocket-cap'
             },
             {
                 'title': 'GAIL Utkarsh Super 100',
@@ -157,6 +195,13 @@ def index():
         ],
         'certifications': [
             {
+                'name': 'Data Science & Machine Learning',
+                'issuer': 'Consulting & Analytics Club IIT Guwahati',
+                'date': '2025',
+                'credential_url': 'https://www.coursera.org/account/accomplishments/verify/2BJ4JL6IIRTH?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse',
+                'skills': ['Data modeling','Feature Engineering','.pathway','Live Data streaming','Stream & Batch Processing']
+            },
+            {
                 'name': 'Data analytics with Excel',
                 'issuer': 'IraSkills',
                 'date': '2024',
@@ -168,14 +213,28 @@ def index():
                 'issuer': 'IBM',
                 'date': '2025',
                 'credential_url': 'https://www.credly.com/badges/1c2a5cf1-1cab-4453-9ce6-7278f0a54b1f/linked_in_profile',
-                'skills': ['Python', 'Machine Learning', 'Data Science', 'Jupyter Notebooks', 'GitHub']
+                'skills': ['Python', 'Machine Learning', 'Data Science', 'Bokeh']
             },
             {
                 'name': 'Introduction to Data Analytics',
-                'issuer': 'IBM',
+                'issuer': 'Coursera',
                 'date': '2025',
                 'credential_url': 'https://www.coursera.org/account/accomplishments/verify/2BJ4JL6IIRTH?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse',
                 'skills': ['Data analytic','Pandas','Numpy','Matplotlib','SQL','Tableau']
+            },
+            {
+                'name': "STUDY OF LD STEEL MAKING AND IT'S SPECIAL PRACTICES",
+                'issuer': 'Tata Steel Ltd.',
+                'date': '2025',
+                'credential_url': 'https://drive.google.com/file/d/1urqeqpJgor98VslzRLl8FY3NdFgfTMLq/view?usp=sharing',
+                'skills': ['SMDS','OptiBOF','Slag Splashing','Enhanced Bath Agitation and Control']
+            },
+            {
+                'name': "FFE SCHLORSHIP AWARDEE AND MENTEE",
+                'issuer': 'Foundation For Excellence',
+                'date': '2025',
+                'credential_url': 'https://www.linkedin.com/in/vishal-maurya-5b183825a/overlay/1745920913312/single-media-viewer/?profileId=ACoAAD_W7FUBGBB4Jh6-Hkl9mB6fwAaWNHw6lYE',
+                'skills': ['Presentation, Design, Delevery Skills']
             }
         ]
     }
@@ -227,10 +286,10 @@ def demo_customer_segmentation():
     """Demo page for Customer Segmentation project"""
     return render_template('demos/customer_segmentation.html')
 
-@app.route('/demo/land-cover-classification')
-def demo_land_cover_classification():
-    """Demo page for NDVI Land Cover Classification project"""
-    return render_template('demos/land_cover_classification.html')
+@app.route('/demo/dynamic_pricing')
+def demo_dynamic_parking():
+    return render_template('dynamic_pricing.html')
+
 
 @app.route('/api/demo/customer-segmentation', methods=['POST'])
 def api_customer_segmentation():
@@ -301,8 +360,8 @@ def api_customer_segmentation():
     except Exception as e:
         return json.dumps({'error': str(e)}), 500
 
-@app.route('/api/demo/land-cover-classification', methods=['POST'])
-def api_land_cover_classification():
+@app.route('/api/dynamic_urban_parking_price.html', methods=['POST'])
+def api_dynamic_pricing():
     """API endpoint for land cover classification demo"""
     import json
     import pandas as pd
@@ -403,4 +462,4 @@ def api_land_cover_classification():
         return json.dumps({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.getenv("PORT", 3000)), debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=True)
