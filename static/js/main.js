@@ -217,10 +217,10 @@ function initTypingEffect() {
     
     const originalText = heroSubtitle.textContent;
     const typingTexts = [
-        'Data Science & ML Engineer',
-        'Machine Learning Specialist',
+        'Data Science',
+        'Machine Learning',
         'Analytics Expert',
-        'Python Developer'
+        'Metallurgical Engineer'
     ];
     
     let textIndex = 0;
@@ -407,7 +407,7 @@ function initDarkMode() {
         });
         
         // Load saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'true') {
+        if (localStorage.getItem('darkMode') === 'True') {
             document.body.classList.add('dark-mode');
         }
     }
