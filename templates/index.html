@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ data.name }} - Data Science & ML Engineer</title>
-    <meta name="description" content="Portfolio of {{ data.name }}, Data Science and Machine Learning Engineer specializing in customer segmentation, sentiment analysis, and predictive modeling.">
+    <title>{{ data.name }} - Metallurgical Engineer</title>
+    <meta name="description" content="Portfolio of {{ data.name }}, Data science and Machine Learning Engineer specializing in customer segmentation, sentiment analysis, and predictive modeling.">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -47,8 +48,7 @@
                         <h1 class="hero-title">{{ data.name }}</h1>
                         <h2 class="hero-subtitle">{{ data.title }}</h2>
                         <p class="hero-description">
-                            Passionate about transforming data into actionable insights. Specialized in machine learning pipelines, 
-                            customer segmentation, and sentiment analysis with proven track record in competitive data science.
+                            Final-year B.Tech student in Metallurgical and Materials Engineering at NIT Jamshedpur, with a strong interest in data-driven problem-solving. I specialize in transforming large datasets into actionable business insights using tools such as Python, Pandas, NumPy, SQL, Power BI, and Machine Learning libraries like scikit-learn.
                         </p>
                         <div class="hero-metrics">
                             <div class="metric">
@@ -56,16 +56,12 @@
                                 <div class="metric-label">Current CGPA</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">474/1394</div>
-                                <div class="metric-label">Hackathon Rank</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">889</div>
-                                <div class="metric-label">SME Questions Solved</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">87.8%</div>
+                                <div class="metric-value">87.8 %</div>
                                 <div class="metric-label">CBSE XII Score</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">93.2 %</div>
+                                <div class="metric-label">CBSE X Score</div>
                             </div>
                         </div>
                         <div class="hero-actions">
@@ -90,21 +86,20 @@
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
                     <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Data-driven professional with expertise in machine learning and analytics</p>
+                    <p class="section-subtitle">Metallurgical Engineer & Data-driven professional with expertise in machine learning and analytics</p>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-content">
                         <p class="lead">
-                            I'm a passionate data science and machine learning engineer currently pursuing my Bachelor's 
-                            degree at NIT Jamshedpur. With hands-on experience in end-to-end ML pipelines, I specialize 
-                            in customer segmentation, sentiment analysis, and predictive modeling.
+                            I'm  passionate about data science and machine learning currently pursuing my Bachelor's degree
+                            in Metallurgical and Materials Science Engineering  at NIT Jamshedpur. With hands-on experience in end-to-end ML pipelines, I specialize 
+                            in customer segmentation, sentiment analysis, and predictive modeling, data streaming and batch processing.
                         </p>
                         <p>
                             My expertise spans from data preprocessing and feature engineering to model deployment and 
-                            business stakeholder presentation. I have successfully ranked in competitive hackathons and 
-                            gained practical experience through internships in data analytics and machine learning.
+                            business stakeholder presentation. I have gained practical experience through internships in data analytics and machine learning.
                         </p>
                         <div class="about-highlights">
                             <div class="highlight-item">
@@ -171,6 +166,21 @@
         </div>
     </section>
 
+
+
+
+<section id="resume" style="text-align: center; padding: 40px;">
+  <h2>📄 My Resume</h2>
+  <p>You can view or download my full resume by clicking the button below:</p>
+
+  <a href="https://drive.google.com/file/d/1996_2i_HrwT_JdpzHnjwsW3-vT0UVJ-h/view?usp=drive_link" 
+     target="_blank" 
+     style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+    View Resume
+  </a>
+</section>
+
+    
     <!-- Projects Section -->
     <section id="projects" class="section-padding bg-light">
         <div class="container">
@@ -290,7 +300,7 @@
                     <div class="skills-category">
                         <div class="skills-header">
                             <i class="fas fa-brain"></i>
-                            <h4>ML Libraries</h4>
+                            <h4>Python Libraries</h4>
                         </div>
                         <div class="skills-list">
                             {% for skill in data.skills.libraries %}
@@ -346,6 +356,19 @@
                         </div>
                         <div class="skills-list">
                             {% for skill in data.skills.analytics_tools %}
+                            <span class="skill-badge skill-warning">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="skills-category">
+                        <div class="skills-header">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Metallurgical Tools</h4>
+                        </div>
+                        <div class="skills-list">
+                            {% for skill in data.skills.metallurgical_tools %}
                             <span class="skill-badge skill-danger">{{ skill }}</span>
                             {% endfor %}
                         </div>
@@ -472,7 +495,7 @@
                             </div>
                             <div class="cert-action">
                                 <a href="{{ cert.credential_url }}" target="_blank" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-linkedin"></i> View on LinkedIn
+                                    <i class="fab fa-certificate"></i> View Certificate
                                 </a>
                             </div>
                         </div>
@@ -539,30 +562,32 @@
                         <div class="row text-center">
                             <div class="col-lg-3 col-md-6 mb-3">
                                 <div class="contact-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <h5>Email</h5>
-                                    <p><a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+                                    <i class="fas fa-code"></i>
+                                    <h5>HackerRanck</h5>
+                                    <p><a href="{{ data.hackerrank }}" target="_blank">View</a></p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 mb-3">
                                 <div class="contact-item">
                                     <i class="fab fa-github"></i>
                                     <h5>GitHub</h5>
-                                    <p><a href="{{ data.github }}" target="_blank">View Profile</a></p>
+                                    <p><a href="{{ data.github }}" target="_blank">View</a></p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 mb-3">
                                 <div class="contact-item">
-                                    <i class="fab fa-linkedin"></i>
-                                    <h5>LinkedIn</h5>
-                                    <p><a href="{{ data.linkedin }}" target="_blank">Connect</a></p>
+                                    <i class="fab fa-code"></i>
+                                    <h5>Leetcode</h5>
+                                    <p><a href="{{ data.leetcode }}" target="_blank">View</a></p>
+                                </div></a></p>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 mb-3">
                                 <div class="contact-item">
                                     <i class="fab fa-kaggle"></i>
                                     <h5>Kaggle</h5>
-                                    <p><a href="{{ data.kaggle }}" target="_blank">View Competitions</a></p>
+                                    <p><a href="{{ data.kaggle }}" target="_blank">View</a></p>
+                                </div></a></p>
                                 </div>
                             </div>
                         </div>
