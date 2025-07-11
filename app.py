@@ -179,7 +179,7 @@ def index():
             },
             {
                 'title': 'Nutrition Health Survey- Age Prediction Summer Analytics 2025, IIT Guwahati',
-                'description': 'Ranked 189 out of 7.1K participants by handling missing values, using Dicision Tree Classification',
+                'description': 'Ranked 189 out of 7.1K participants by handling missing values, using Dicision Tree Classification on AI planet',
                 'icon': 'fas fa-rocket-cap'
             },
             {
