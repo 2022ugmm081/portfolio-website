@@ -288,7 +288,7 @@ def demo_customer_segmentation():
 
 @app.route('/demo/dynamic_pricing')
 def demo_dynamic_parking():
-    return render_template('dynamic_pricing.html')
+    return render_template('land_cover_classification.html')
 
 
 @app.route('/api/demo/customer-segmentation', methods=['POST'])
