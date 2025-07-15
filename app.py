@@ -78,13 +78,13 @@ def index():
                 'kaggle_dataset': 'https://github.com/2022ugmm081/Dynamic-Parking-Pricing/blob/main/data/dataset.csv'
             },
             {
-                'title': 'Customer Segmentation Analysis Dashboard',
+                'title': 'Customer Segmentation Analysis',
                 'description': 'Built Customer segments using  KMeans clustering and elbow method on a Kaggle dataset.',
                 'technologies': ['R', 'purrr', 'Llyod','KMeans', 'ggplot',],
                 'highlights': ['Unsupervised learning'],
                 'image': 'https://x.com/gusknp2022/status/1945110997691203652',
                 'demo_url': '/demo/customer-segmentation',
-                'github_url': 'https://github.com/vishal-maurya/customer-segmentation-dashboard',
+                'github_url': 'https://github.com/2022ugmm081/customers-segmentation-using-R',
                 'kaggle_dataset': 'https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python'
             },
             {
