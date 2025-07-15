@@ -75,24 +75,24 @@ def index():
                 'image': 'https://pbs.twimg.com/media/GvZG3qGaYAcRHE9?format=jpg&name=small',
                 'demo_url': '/demo/dynamic_pricing',
                 'github_url': 'https://github.com/2022ugmm081/Dynamic-Parking-Pricing',
-                'kaggle_competition': 'https://www.kaggle.com/competitions/summer-analytics-mid-hackathon'
+                'kaggle_dataset': 'https://github.com/2022ugmm081/Dynamic-Parking-Pricing/blob/main/data/dataset.csv'
             },
             {
                 'title': 'Customer Segmentation Analysis Dashboard',
-                'description': 'Built an end-to-end ML pipeline using KMeans and logistic regression on a Kaggle dataset, with an interactive Plotly Dash dashboard. Applied NLP techniques and trained models for sentiment prediction and behavioral segmentation.',
-                'technologies': ['Python', 'pandas', 'scikit-learn','KMeans', 'Logistic Regression', 'Seaborn', 'Dash'],
-                'highlights': ['End-to-end ML pipeline', 'Interactive dashboard', 'Business stakeholder presentation'],
-                'image': 'https://pixabay.com/get/g36208a1b77913678b03a464f36cd96f5c06b18f05f8191572d32a013c4408124a480de5b92a760d6428d9f066a0273918dfa9a993f172a5b2dd8590f6640e6fb_1280.jpg',
+                'description': 'Built Customer segments using  KMeans clustering and elbow method on a Kaggle dataset.',
+                'technologies': ['R', 'purrr', 'Llyod','KMeans', 'ggplot',],
+                'highlights': ['Unsupervised learning'],
+                'image': 'https://x.com/gusknp2022/status/1945110997691203652',
                 'demo_url': '/demo/customer-segmentation',
                 'github_url': 'https://github.com/vishal-maurya/customer-segmentation-dashboard',
-                'kaggle_dataset': 'https://www.kaggle.com/mauryavishal0/datasets'
+                'kaggle_dataset': 'https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python'
             },
             {
                 'title': 'Heart Disease Prediction Using Machine Learning',
                 'description': 'Developed classification models using Logistic Regression and Random Forest on the UCI Cleveland Heart Disease dataset from Kaggle. Included thorough preprocessing, EDA, model training, and evaluation using confusion matrices.',
                 'technologies': ['Python', 'pandas', 'scikit-learn', 'Logistic Regression', 'Random Forest', 'Seaborn', 'Matplotlib', 'Jupyter Notebook'],
                 'highlights': ['79% accuracy with Logistic Regression', 'Clinical feature analysis', 'Confusion matrix evaluation'],
-                'image': 'https://pixabay.com/get/g84e1b4ce009ae7a5b1666603dd1814d9f28ce496f406a49884ac210e0a70e59cf1167b6793ae79eeaa0a406a7b087fb7c828f6bbdbd0f666d013517d3cc0b276_1280.jpg',
+                'image': 'https://x.com/gusknp2022/status/1945111600819560893',
                 'demo_url': '/demo/heart-disease-prediction',
                 'github_url': 'https://github.com/2022ugmm081/heart-disease-prediction',
                 'kaggle_dataset': 'https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data'
