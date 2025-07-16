@@ -80,9 +80,9 @@ def index():
             {
                 'title': 'Customer Segmentation Analysis',
                 'description': 'Built Customer segments using  KMeans clustering and elbow method on a Kaggle dataset.',
-                'technologies': ['R', 'purrr', 'Llyod','KMeans', 'ggplot',],
+                'technologies': ['R', 'purrr', 'Llyod','KMeans', 'ggplot','dplyr'],
                 'highlights': ['Unsupervised learning'],
-                'image': 'https://x.com/gusknp2022/status/1945110997691203652',
+                'image': 'https://pbs.twimg.com/media/Gv5sEGbXMAEHV_V?format=png&name=small',
                 'demo_url': '/demo/customer-segmentation',
                 'github_url': 'https://github.com/2022ugmm081/customers-segmentation-using-R',
                 'kaggle_dataset': 'https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python'
@@ -92,7 +92,7 @@ def index():
                 'description': 'Developed classification models using Logistic Regression and Random Forest on the UCI Cleveland Heart Disease dataset from Kaggle. Included thorough preprocessing, EDA, model training, and evaluation using confusion matrices.',
                 'technologies': ['Python', 'pandas', 'scikit-learn', 'Logistic Regression', 'Random Forest', 'Seaborn', 'Matplotlib', 'Jupyter Notebook'],
                 'highlights': ['79% accuracy with Logistic Regression', 'Clinical feature analysis', 'Confusion matrix evaluation'],
-                'image': 'https://x.com/gusknp2022/status/1945111600819560893',
+                'image': 'https://pbs.twimg.com/media/Gv5slzYW8AAD-3n?format=png&name=900x900',
                 'demo_url': '/demo/heart-disease-prediction',
                 'github_url': 'https://github.com/2022ugmm081/heart-disease-prediction',
                 'kaggle_dataset': 'https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data'
