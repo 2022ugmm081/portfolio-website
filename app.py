@@ -151,12 +151,12 @@ def index():
             }
         ],
         'skills': {
-            'languages': ['Python', 'SQL','SAS','R'],
+            'languages': ['Python', 'SQL','R'],
             'libraries': ['Pandas', 'Seaborn','Numpy', 'Matplotlib', 'OpenCV', 'Scikit-learn'],
             'tools': ['Google Colab', 'Kaggle', 'Jupyter Notebook', 'VS Code'],
             'frameworks': ['Dash','Flask','Pathway'],
             'databases': [ 'MySQL'],
-            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query','Alteryx'],
+            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query','Alteryx', 'SAS'],
             'metallurgical_tools':['Factsage Education','ImageJ']
         },
         'interests': ['Data Analysis', 'Machine Learning'],
