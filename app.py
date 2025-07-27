@@ -156,7 +156,7 @@ def index():
             'tools': ['Google Colab', 'Kaggle', 'Jupyter Notebook', 'VS Code'],
             'frameworks': ['Dash','Flask','Pathway'],
             'databases': [ 'MySQL'],
-            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query','Alteryx', 'SAS'],
+            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query'],
             'metallurgical_tools':['Factsage Education','ImageJ']
         },
         'interests': ['Data Analysis', 'Machine Learning'],
