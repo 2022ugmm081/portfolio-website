@@ -198,7 +198,7 @@ def index():
                 'name': 'Data Science & Machine Learning',
                 'issuer': 'Consulting & Analytics Club IIT Guwahati',
                 'date': '2025',
-                'credential_url': 'https://www.coursera.org/account/accomplishments/verify/2BJ4JL6IIRTH?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse',
+                'credential_url': 'https://drive.google.com/file/d/14hjrHPzmQfRka6KHuAfv9_Zv8Js0Awnw/view',
                 'skills': ['Data modeling','Feature Engineering','.pathway','Live Data streaming','Stream & Batch Processing']
             },
             {
