@@ -151,12 +151,12 @@ def index():
             }
         ],
         'skills': {
-            'languages': ['Python', 'SQL','R'],
+            'languages': ['Python', 'SQL'],
             'libraries': ['Pandas', 'Seaborn','Numpy', 'Matplotlib', 'OpenCV', 'Scikit-learn'],
             'tools': ['Google Colab', 'Kaggle', 'Jupyter Notebook', 'VS Code'],
             'frameworks': ['Dash','Flask','Pathway'],
             'databases': [ 'MySQL'],
-            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Tableau', 'Microsoft Power Query'],
+            'analytics_tools': ['Microsoft Excel', 'Power BI', 'PowerPoint', 'Microsoft Power Query'],
             'metallurgical_tools':['Factsage Education','ImageJ']
         },
         'interests': ['Data Analysis', 'Machine Learning'],
@@ -463,3 +463,4 @@ def api_dynamic_pricing():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 3000)), debug=False)
+
